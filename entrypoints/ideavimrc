@@ -1,4 +1,3 @@
-" vim:ft=vim
 " Ref: https://github.com/OptimusCrime/ideavim/blob/main/ideavimrc
 
 " TODO:
@@ -133,9 +132,11 @@ nnoremap <C-n> :NERDTreeFocus<CR>
 let g:WhichKeyDesc_focus_nerd_tree = "<leader>e General | Focus NERDTree"
 
 " Plugin
-nnoremap <leader>ph :action WelcomeScreen.Plugins<CR> 
+nnoremap <leader>ph :action WelcomeScreen.Plugins<CR>
 let g:WhichKeyDesc_plugins_home = "<leader>ph Plugins | Home"
 
 " LSP
 nnoremap <leader>lf :action ReformatCode<CR>
 let g:WhichKeyDesc_lsp_format = "<leader>lf LSP | Format"
+
+" vim:ft=vim

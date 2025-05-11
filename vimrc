@@ -30,3 +30,5 @@ source ~/.vim/vim-specific/cmds.vim
 
 source ~/.vim/core/autocmds.vim
 source ~/.vim/vim-specific/autocmds.vim
+
+" vim:ft=vim
