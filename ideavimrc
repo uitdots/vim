@@ -61,13 +61,14 @@ set notimeout
 set timeoutlen=500
 let g:WhichKey_ShowVimActions = "true"
 let g:WhichKey_DefaultDelay = 600
+let g:WhichKey_ProcessUnknownMappings = "false"
 
 " General desc
-let g:WhichKeyDesc_yank_alle = "<leader>y General | Yank All"
+let g:WhichKeyDesc_yank_all = "<leader>y General | Yank All"
 
 " Neccessary mappings
 nnoremap <leader><leader> :action SearchEverywhere<CR>
-let g:WhichKeyDesc_search_everywhere = "<leader>9 General | Search Everywhere"
+let g:WhichKeyDesc_search_everywhere = "<leader><leader> General | Search Everywhere"
 
 " source
 nnoremap <leader>9 :action IdeaVim.ReloadVimRc.reload<CR>
@@ -99,8 +100,10 @@ function! NumberToggle()
   endif
 endfunction
 
+" Options
+let g:WhichKeyDesc_options = "<leader>o Options"
 nnoremap <leader>or :call NumberToggle()<cr>
-let g:WhichKeyDesc_toggle_relativenumber = "<leader>or Options | Toggle Relative Number"
+let g:WhichKeyDesc_options_toggle_relativenumber = "<leader>or Options | Toggle Relative Number"
 
 " Close buffer aka editor
 nnoremap <leader>c :action CloseEditor<CR>
@@ -119,10 +122,13 @@ nnoremap ]d :action GotoNextError<CR>
 let g:WhichKeyDesc_next_error = "]d General | Next Error"
 nnoremap [d :action GotoPreviousError<CR>
 let g:WhichKeyDesc_previous_error = "[d General | Previous Error"
+
+" Git
+let g:WhichKeyDesc_git = "<leader>g Git"
 nnoremap <leader>g] :action JumpToLastChange<CR>
-let g:WhichKeyDesc_jump_to_last_change = "<leader>g] Git | Next Hunk"
+let g:WhichKeyDesc_git_next_hunk = "<leader>g] Git | Next Hunk"
 nnoremap <leader>g[ :action JumpToNextChange<CR>
-let g:WhichKeyDesc_jump_to_next_change = "<leader>g[ Git | Previous Hunk"
+let g:WhichKeyDesc_git_prev_hunk = "<leader>g[ Git | Previous Hunk"
 
 " NERDTree
 nnoremap <leader>e :NERDTreeToggle<CR>
@@ -131,10 +137,12 @@ nnoremap <C-n> :NERDTreeFocus<CR>
 let g:WhichKeyDesc_focus_nerd_tree = "<leader>e General | Focus NERDTree"
 
 " Plugin
+let g:WhichKeyDesc_plugins = "<leader>p Plugins"
 nnoremap <leader>ph :action WelcomeScreen.Plugins<CR>
 let g:WhichKeyDesc_plugins_home = "<leader>ph Plugins | Home"
 
 " LSP
+let g:WhichKeyDesc_lsp = "<leader>l LSP"
 nnoremap <leader>lf :action ReformatCode<CR>
 let g:WhichKeyDesc_lsp_format = "<leader>lf LSP | Format"
 
