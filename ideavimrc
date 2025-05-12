@@ -63,6 +63,12 @@ let g:WhichKey_ShowVimActions = "true"
 let g:WhichKey_DefaultDelay = 600
 let g:WhichKey_ProcessUnknownMappings = "false"
 
+" Window
+nnoremap <C-w><C-d> :action ShowErrorDescription<CR>
+let g:WhichKeyDesc_window_show_error_description_1 = "<C-w><C-d> Window | Show Error"
+nnoremap <C-w>d :action ShowErrorDescription<CR>
+let g:WhichKeyDesc_window_show_error_description_2 = "<C-w>d Window | Show Error"
+
 " General desc
 let g:WhichKeyDesc_yank_all = "<leader>y General | Yank All"
 
@@ -102,8 +108,10 @@ endfunction
 
 " Options
 let g:WhichKeyDesc_options = "<leader>o Options"
-nnoremap <leader>or :call NumberToggle()<cr>
+nnoremap <leader>or :call NumberToggle()<CR>
 let g:WhichKeyDesc_options_toggle_relativenumber = "<leader>or Options | Toggle Relative Number"
+nnoremap <leader>oz :action ToggleDistractionFreeMode<CR>
+let g:WhichKeyDesc_options_toggle_zen_mode = "<leader>or Options | Toggle Zen Mode"
 
 " Close buffer aka editor
 nnoremap <leader>c :action CloseEditor<CR>
@@ -147,7 +155,7 @@ nnoremap <leader>lf :action ReformatCode<CR>
 let g:WhichKeyDesc_lsp_format = "<leader>lf LSP | Format"
 
 " Flash
-nnoremap s (flash.search)
-xnoremap s (flash.search)
+nnoremap s :action flash.search<CR>
+xnoremap s :action flash.search<CR>
 
 " vim:ft=vim
