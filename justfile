@@ -7,7 +7,7 @@ install:
 [unix]
 copy-config:
   if [ ! -f ~/.ideavimrc ]; then \
-    ln -s ./entrypoints/ideavimrc ~/.ideavimrc; \
+    ln -s ./ideavimrc ~/.ideavimrc; \
   fi
 
 [windows]

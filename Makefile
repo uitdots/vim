@@ -9,7 +9,7 @@ copy-config: copy-config-unix
 
 copy-config-unix:
 	@if [ ! -f ~/.ideavimrc ]; then \
-		ln -s ./entrypoints/ideavimrc ~/.ideavimrc; \
+		ln -s ./ideavimrc ~/.ideavimrc; \
 	fi
 
 copy-config-windows:
