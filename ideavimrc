@@ -58,9 +58,9 @@ sethandler <C-y> a:vim
 
 " which-key settings
 set notimeout
-set timeoutlen=500
+set timeoutlen=5000
 let g:WhichKey_ShowVimActions = "true"
-let g:WhichKey_DefaultDelay = 600
+let g:WhichKey_DefaultDelay = 500
 let g:WhichKey_ProcessUnknownMappings = "false"
 
 " Window
@@ -79,23 +79,6 @@ let g:WhichKeyDesc_search_everywhere = "<leader><leader> General | Search Everyw
 " source
 nnoremap <leader>9 :action IdeaVim.ReloadVimRc.reload<CR>
 let g:WhichKeyDesc_reload_config = "<leader>9 General | Reload Config"
-
-" toggle which-key plugin
-let s:whichKeyEnabled = 0
-function! WhichKeyToggle()
-  if s:whichKeyEnabled
-    set which-key!
-    set notimeout!
-    let s:whichKeyEnabled = 0
-  else
-    set which-key
-    set notimeout
-    let s:whichKeyEnabled = 1
-  endif
-endfunction
-
-nnoremap <leader>8 :call WhichKeyToggle()<cr>
-let g:WhichKeyDesc_toggle_which_key = "<leader>8 General | Toggle WhichKey"
 
 " toggle line number relative
 function! NumberToggle()
