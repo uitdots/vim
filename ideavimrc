@@ -63,6 +63,14 @@ let g:WhichKey_ShowVimActions = "true"
 let g:WhichKey_DefaultDelay = 500
 let g:WhichKey_ProcessUnknownMappings = "false"
 
+" Neovim's style LSP
+nnoremap gra :action ShowIntentionActions<CR>
+let g:WhichKeyDesc_go_code_action = "gra LSP | Code Action"
+nnoremap grr :action FindUsages<CR>
+let g:WhichKeyDesc_go_reference = "grr LSP | Go to Reference"
+nnoremap grn :action RenameElement<CR>
+let g:WhichKeyDesc_go_rename = "grr LSP | Rename"
+
 " Window
 nnoremap <C-w><C-d> :action ShowErrorDescription<CR>
 let g:WhichKeyDesc_window_show_error_description_1 = "<C-w><C-d> Window | Show Error"
@@ -136,6 +144,8 @@ let g:WhichKeyDesc_plugins_home = "<leader>ph Plugins | Home"
 let g:WhichKeyDesc_lsp = "<leader>l LSP"
 nnoremap <leader>lf :action ReformatCode<CR>
 let g:WhichKeyDesc_lsp_format = "<leader>lf LSP | Format"
+nnoremap <leader>ls :action FileStructurePopup<CR>
+let g:WhichKeyDesc_lsp_structure = "<leader>ls LSP | Structure"
 
 " Flash
 nnoremap s :action flash.search<CR>
