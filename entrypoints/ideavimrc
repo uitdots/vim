@@ -13,7 +13,6 @@ set ReplaceWithRegister
 set Which-Key
 set argtextobj
 set commentary
-set easymotion
 set functiontextobj
 set highlightedyank
 set mini-ai
@@ -138,5 +137,9 @@ let g:WhichKeyDesc_plugins_home = "<leader>ph Plugins | Home"
 " LSP
 nnoremap <leader>lf :action ReformatCode<CR>
 let g:WhichKeyDesc_lsp_format = "<leader>lf LSP | Format"
+
+" Flash
+nnoremap s (flash.search)
+xnoremap s (flash.search)
 
 " vim:ft=vim
