@@ -113,6 +113,8 @@ nnoremap <leader><C-c> :action CloseAllEditors<CR>
 let g:WhichKeyDesc_close_all_editors = "<leader><C-c> General | Close All Editors"
 
 " Navigate
+nnoremap H :action PreviousTab<CR>
+nnoremap H :action NextTab<CR>
 nnoremap [m :action MethodUp<CR>
 let g:WhichKeyDesc_previous_method = "[m Previous | Method Start"
 nnoremap ]m :action MethodDown<CR>
