@@ -155,6 +155,16 @@ let g:WhichKeyDesc_lsp_format = "<leader>lf LSP | Format"
 nnoremap <leader>ls :action FileStructurePopup<CR>
 let g:WhichKeyDesc_lsp_structure = "<leader>ls LSP | Structure"
 
+" LSP | Action
+let g:WhichKeyDesc_lsp_action = "<leader>la LSP | Actions"
+nnoremap <leader>lao :action OptimizeImports<CR>
+let g:WhichKeyDesc_lsp_action_organize_imports = "<leader>lao LSP Actions | Organize Imports"
+
+" Refactoring
+let g:WhichKeyDesc_refactor = "<leader>R Refactor"
+nnoremap <leader>RR :action Refactorings.QuickListPopupAction<CR>
+let g:WhichKeyDesc_refactor_menu = "<leader>RR Refactor | Menu"
+
 " Flash
 nnoremap s :action flash.search<CR>
 xnoremap s :action flash.search<CR>
