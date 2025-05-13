@@ -55,6 +55,8 @@ sethandler <C-v> a:vim
 sethandler <C-w> a:vim
 sethandler <C-x> a:vim
 sethandler <C-y> a:vim
+sethandler <A-j> a:vim
+sethandler <A-k> a:vim
 
 " which-key settings
 set notimeout
