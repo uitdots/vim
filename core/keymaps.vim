@@ -2,7 +2,6 @@ inoremap jk <Esc>
 
 " Save
 nnoremap <C-s> :w<CR>
-inoremap <C-s> <cmd>w<CR>
 
 " Yank to Last
 nnoremap Y y$
@@ -18,7 +17,6 @@ nnoremap <leader>ow :set wrap!<CR>
 
 " Close current window
 nnoremap <leader>w :close<CR>
-nnoremap sq :close<CR>
 
 " Better Down
 " nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
