@@ -28,36 +28,6 @@ set clipboard=ideaput
 set ideajoin
 set idearefactormode=keep
 
-" Allow vim handler
-sethandler <C-a> a:vim
-sethandler <C-b> a:vim
-sethandler <C-c> a:vim
-sethandler <C-d> a:vim
-sethandler <C-e> a:vim
-sethandler <C-f> a:vim
-sethandler <C-g> a:vim
-sethandler <C-h> a:vim
-sethandler <C-i> a:vim
-sethandler <C-j> a:vim
-sethandler <C-k> a:vim
-sethandler <C-l> a:vim
-sethandler <C-m> a:vim
-sethandler <C-n> a:vim
-sethandler <C-o> a:vim
-sethandler <C-p> a:vim
-sethandler <C-q> a:vim
-sethandler <C-r> a:vim
-sethandler <C-s> a:vim
-sethandler <C-t> a:vim
-sethandler <C-u> a:vim
-sethandler <C-v> a:vim
-sethandler <C-v> a:vim
-sethandler <C-w> a:vim
-sethandler <C-x> a:vim
-sethandler <C-y> a:vim
-sethandler <A-j> a:vim
-sethandler <A-k> a:vim
-
 " which-key settings
 set notimeout
 set timeoutlen=5000
@@ -168,5 +138,35 @@ let g:WhichKeyDesc_refactor_menu = "<leader>RR Refactor | Menu"
 " Flash
 nnoremap s :action flash.search<CR>
 xnoremap s :action flash.search<CR>
+
+" Allow vim handler
+sethandler <C-a> a:vim
+sethandler <C-b> a:vim
+sethandler <C-c> a:vim
+sethandler <C-d> a:vim
+sethandler <C-e> a:vim
+sethandler <C-f> a:vim
+sethandler <C-g> a:vim
+sethandler <C-h> a:vim
+sethandler <C-i> a:vim
+sethandler <C-j> a:vim
+sethandler <C-k> a:vim
+sethandler <C-l> a:vim
+sethandler <C-m> a:vim
+sethandler <C-n> a:vim
+sethandler <C-o> a:vim
+sethandler <C-p> a:vim
+sethandler <C-q> a:vim
+sethandler <C-r> a:vim
+sethandler <C-s> a:vim
+sethandler <C-t> a:vim
+sethandler <C-u> a:vim
+sethandler <C-v> a:vim
+sethandler <C-v> a:vim
+sethandler <C-w> a:vim
+sethandler <C-x> a:vim
+sethandler <C-y> a:vim
+sethandler <A-j> a:vim
+sethandler <A-k> a:vim
 
 " vim:ft=vim
