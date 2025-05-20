@@ -168,5 +168,6 @@ sethandler <C-x> a:vim
 sethandler <C-y> a:vim
 sethandler <A-j> a:vim
 sethandler <A-k> a:vim
+sethandler <C-]> a:vim
 
 " vim:ft=vim
