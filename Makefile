@@ -1,16 +1,32 @@
 # This file is converted form justfile by AI. I don't know to to create Makefile
-.PHONY: install copy-config copy-config-unix copy-config-windows
 
+# Default target
+.PHONY: default
+default: install
+
+# Variable
+VIM_PLUG_URL = https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# Install target
+.PHONY: install
 install:
-	curl -fLo ~/.vim/autoload/plug.vim --create-dirs 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+	curl -C - -fLo ./autoload/plug.vim --create-dirs $(VIM_PLUG_URL)
 	$(MAKE) copy-config
 
-copy-config: copy-config-unix
-
-copy-config-unix:
-	@if [ ! -f ~/.ideavimrc ]; then \
-		ln -s ./ideavimrc ~/.ideavimrc; \
+# Copy config based on OS
+.PHONY: copy-config
+copy-config:
+ifeq ($(OS),Windows_NT)
+	IF NOT EXIST "$(USERPROFILE)\.ideavimrc" ( ^
+	  mklink "$(USERPROFILE)\.ideavimrc" "%CD%\ideavimrc" ^
+	)
+else
+	if [ ! -f $$HOME/.ideavimrc ]; then \
+	  ln -s "$(CURDIR)/ideavimrc" $$HOME/.ideavimrc; \
 	fi
+endif
 
-copy-config-windows:
-	@echo "Windows configuration is not yet implemented."
+# Update vim-plug
+.PHONY: update-vim-plug
+update-vim-plug:
+	curl -fLo ./autoload/plug.vim --create-dirs $(VIM_PLUG_URL)
