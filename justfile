@@ -1,6 +1,7 @@
 default: install
 
 vim-plug-url := 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+entrypoints := 'vimrc ideavimrc'
 
 install:
   curl -C - -fLo ./autoload/plug.vim --create-dirs {{ vim-plug-url }}
@@ -8,15 +9,19 @@ install:
 
 [unix]
 copy-config:
-  if [ ! -f ~/.ideavimrc ]; then \
-    ln -s '{{invocation_directory()}}/ideavimrc' ~/.ideavimrc; \
-  fi
+  for entrypoint in {{ entrypoints }}; do \
+    if [ ! -f "$HOME/.$entrypoint" ]; then \
+      ln -s "{{invocation_directory()}}/$entrypoint" "$HOME/.$entrypoint"; \
+    fi \
+  done
 
 # TODO: Maybe check the endline char ^
 [windows]
 copy-config:
-  IF NOT EXIST "%USERPROFILE%\.ideavimrc" ( \
-    mklink "%USERPROFILE%\.ideavimrc" "%CD%\ideavimrc" \
+  FOR %%F IN ({{ entrypoints }}) do ( \
+    IF NOT EXIST "%USERPROFILE%\.%%F" ( \
+      mklink "%USERPROFILE%\.%%F" "%CD%\%%F" \
+    ) \
   )
 
 update-vim-plug:
