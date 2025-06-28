@@ -10,7 +10,7 @@
 " extension
 set NERDTree
 set ReplaceWithRegister
-set Which-Key
+set which-key
 set argtextobj
 set commentary
 set functiontextobj
@@ -30,7 +30,6 @@ set idearefactormode=keep
 
 " which-key settings
 set notimeout
-set timeoutlen=5000
 let g:WhichKey_ShowVimActions = "true"
 let g:WhichKey_DefaultDelay = 500
 let g:WhichKey_ProcessUnknownMappings = "false"
@@ -81,8 +80,8 @@ nnoremap <leader>c :action CloseEditor<CR>
 let g:WhichKeyDesc_close_editor = "<leader>c Close Editor"
 nnoremap <leader>C :action CloseAllEditorsButActive<CR>
 let g:WhichKeyDesc_close_other_editors = "<leader>C General | Close Other Editors"
-nnoremap <leader><C-c> :action CloseAllEditors<CR>
-let g:WhichKeyDesc_close_all_editors = "<leader><C-c> General | Close All Editors"
+nnoremap <leader><M-c> :action CloseAllEditors<CR>
+let g:WhichKeyDesc_close_all_editors = "<leader><M-c> General | Close All Editors"
 
 " Navigate
 unmap <Left>

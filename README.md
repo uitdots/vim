@@ -36,5 +36,7 @@ Ensure <https://github.com/junegunn/vim-plug> installed
 ### IdeaVim
 
 - Install below plugins:
+  - <https://github.com/JetBrains/ideavim>
   - <https://github.com/yelog/vim-flash>
   - <https://github.com/TheBlob42/idea-which-key>
+  - <https://github.com/jphalip/ideavim-functiontextobj>
