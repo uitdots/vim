@@ -7,166 +7,20 @@
 " https://github.com/OptimusCrime/ideavim/blob/7daba35b92ac276a2809492aab95fcf3c8bcd8e9/ideavimrc#L170
 " https://github.com/OptimusCrime/ideavim/blob/7daba35b92ac276a2809492aab95fcf3c8bcd8e9/ideavimrc#L206
 
-" extension
-set NERDTree
-set ReplaceWithRegister
-set which-key
-set argtextobj
-set commentary
-set functiontextobj
-set highlightedyank
-set mini-ai
-set multiple-cursors
-set surround
-set textobj-entire
+source ~/.vim/ideavim/core/extensions.vim
 
 source ~/.vim/core/options.vim
 source ~/.vim/core/keymaps.vim
+source ~/.vim/ideavim/core/keymaps.vim
 source ~/.vim/core/autocmds.vim
 
-set clipboard=ideaput
-set ideajoin
-set idearefactormode=keep
+source ~/.vim/ideavim/core/options.vim
 
-" which-key settings
-set notimeout
-let g:WhichKey_ShowVimActions = "true"
-let g:WhichKey_DefaultDelay = 500
-let g:WhichKey_ProcessUnknownMappings = "false"
+" Extensions settings
+source ~/.vim/ideavim/extensions/flash.vim
+source ~/.vim/ideavim/extensions/which-key.vim
 
-" Neovim's style LSP
-nnoremap gra :action ShowIntentionActions<CR>
-let g:WhichKeyDesc_go_code_action = "gra LSP | Code Action"
-nnoremap grr :action FindUsages<CR>
-let g:WhichKeyDesc_go_reference = "grr LSP | Go to Reference"
-nnoremap grn :action RenameElement<CR>
-let g:WhichKeyDesc_go_rename = "grr LSP | Rename"
-
-" Window
-nnoremap <C-w><C-d> :action ShowErrorDescription<CR>
-let g:WhichKeyDesc_window_show_error_description_1 = "<C-w><C-d> Window | Show Error"
-nnoremap <C-w>d :action ShowErrorDescription<CR>
-let g:WhichKeyDesc_window_show_error_description_2 = "<C-w>d Window | Show Error"
-
-" General desc
-let g:WhichKeyDesc_yank_all = "<leader>y General | Yank All"
-
-" Neccessary mappings
-nnoremap <leader><leader> :action SearchEverywhere<CR>
-let g:WhichKeyDesc_search_everywhere = "<leader><leader> General | Search Everywhere"
-
-" source
-nnoremap <leader>9 :action IdeaVim.ReloadVimRc.reload<CR>
-let g:WhichKeyDesc_reload_config = "<leader>9 General | Reload Config"
-
-" toggle line number relative
-function! NumberToggle()
-  if(&relativenumber == 1)
-    set norelativenumber
-  else
-    set relativenumber number
-  endif
-endfunction
-
-" Options
-let g:WhichKeyDesc_options = "<leader>o Options"
-nnoremap <leader>or :call NumberToggle()<CR>
-let g:WhichKeyDesc_options_toggle_relativenumber = "<leader>or Options | Toggle Relative Number"
-nnoremap <leader>oz :action ToggleDistractionFreeMode<CR>
-let g:WhichKeyDesc_options_toggle_zen_mode = "<leader>or Options | Toggle Zen Mode"
-
-" Close buffer aka editor
-nnoremap <leader>c :action CloseEditor<CR>
-let g:WhichKeyDesc_close_editor = "<leader>c Close Editor"
-nnoremap <leader>C :action CloseAllEditorsButActive<CR>
-let g:WhichKeyDesc_close_other_editors = "<leader>C General | Close Other Editors"
-nnoremap <leader><M-c> :action CloseAllEditors<CR>
-let g:WhichKeyDesc_close_all_editors = "<leader><M-c> General | Close All Editors"
-
-" Navigate
-unmap <Left>
-unmap <Right>
-unmap <Up>
-unmap <Down>
-nnoremap H :tabprevious<CR>
-nnoremap L :tabnext<CR>
-nnoremap [m :action MethodUp<CR>
-let g:WhichKeyDesc_previous_method = "[m Previous | Method Start"
-nnoremap ]m :action MethodDown<CR>
-let g:WhichKeyDesc_next_method = "[m Next | Method Start"
-nnoremap ]d :action GotoNextError<CR>
-let g:WhichKeyDesc_next_error = "]d General | Next Error"
-nnoremap [d :action GotoPreviousError<CR>
-let g:WhichKeyDesc_previous_error = "[d General | Previous Error"
-
-" Git
-let g:WhichKeyDesc_git = "<leader>g Git"
-nnoremap <leader>g] :action JumpToLastChange<CR>
-let g:WhichKeyDesc_git_next_hunk = "<leader>g] Git | Next Hunk"
-nnoremap <leader>g[ :action JumpToNextChange<CR>
-let g:WhichKeyDesc_git_prev_hunk = "<leader>g[ Git | Previous Hunk"
-
-" NERDTree
-nnoremap <leader>e :NERDTreeToggle<CR>
-let g:WhichKeyDesc_toggle_nerd_tree = "<leader>e General | Toggle NERDTree"
-nnoremap <C-n> :NERDTreeFocus<CR>
-let g:WhichKeyDesc_focus_nerd_tree = "<leader>e General | Focus NERDTree"
-
-" Plugin
-let g:WhichKeyDesc_plugins = "<leader>p Plugins"
-nnoremap <leader>ph :action WelcomeScreen.Plugins<CR>
-let g:WhichKeyDesc_plugins_home = "<leader>ph Plugins | Home"
-
-" LSP
-let g:WhichKeyDesc_lsp = "<leader>l LSP"
-nnoremap <leader>lf :action ReformatCode<CR>
-let g:WhichKeyDesc_lsp_format = "<leader>lf LSP | Format"
-nnoremap <leader>ls :action FileStructurePopup<CR>
-let g:WhichKeyDesc_lsp_structure = "<leader>ls LSP | Structure"
-
-" LSP | Action
-let g:WhichKeyDesc_lsp_action = "<leader>la LSP | Actions"
-nnoremap <leader>lao :action OptimizeImports<CR>
-let g:WhichKeyDesc_lsp_action_organize_imports = "<leader>lao LSP Actions | Organize Imports"
-
-" Refactoring
-let g:WhichKeyDesc_refactor = "<leader>R Refactor"
-nnoremap <leader>RR :action Refactorings.QuickListPopupAction<CR>
-let g:WhichKeyDesc_refactor_menu = "<leader>RR Refactor | Menu"
-
-" Flash
-nnoremap s :action flash.search<CR>
-xnoremap s :action flash.search<CR>
-
-" Allow vim handler
-sethandler <C-a> a:vim
-sethandler <C-b> a:vim
-sethandler <C-c> a:vim
-sethandler <C-d> a:vim
-sethandler <C-e> a:vim
-sethandler <C-f> a:vim
-sethandler <C-g> a:vim
-sethandler <C-h> a:vim
-sethandler <C-i> a:vim
-sethandler <C-j> a:vim
-sethandler <C-k> a:vim
-sethandler <C-l> a:vim
-sethandler <C-m> a:vim
-sethandler <C-n> a:vim
-sethandler <C-o> a:vim
-sethandler <C-p> a:vim
-sethandler <C-q> a:vim
-sethandler <C-r> a:vim
-sethandler <C-s> a:vim
-sethandler <C-t> a:vim
-sethandler <C-u> a:vim
-sethandler <C-v> a:vim
-sethandler <C-v> a:vim
-sethandler <C-w> a:vim
-sethandler <C-x> a:vim
-sethandler <C-y> a:vim
-sethandler <A-j> a:vim
-sethandler <A-k> a:vim
-sethandler <C-]> a:vim
+" Set handlers
+source ~/.vim/ideavim/core/handlers.vim
 
 " vim:ft=vim

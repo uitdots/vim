@@ -1,4 +1,5 @@
-let mapleader = " "
+let mapleader = ' '
+let maplocalleader = '\'
 let g:bigfile_size = 1024 * 1024 * 1.5 " 1.5MB
 
 " Compatibility & Encoding

@@ -1,0 +1,11 @@
+set NERDTree
+set ReplaceWithRegister
+set which-key
+set argtextobj
+set commentary
+set functiontextobj
+set highlightedyank
+set mini-ai
+set multiple-cursors
+set surround
+set textobj-entire

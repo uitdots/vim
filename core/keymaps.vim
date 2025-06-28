@@ -88,5 +88,5 @@ nnoremap <Up> :tabnew<CR>
 nnoremap <Down> :tabclose<CR>
 
 " []
-nnoremap ]<Space> :call append(line("."), "")<CR>
-nnoremap [<Space> :call append(line(".") - 1, "")<CR>
+nnoremap ]<Space> :call append(line('.'), '')<CR>
+nnoremap [<Space> :call append(line('.') - 1, '')<CR>

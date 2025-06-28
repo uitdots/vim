@@ -1,7 +1,7 @@
 default: install
 
 vim-plug-url := 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-entrypoints := 'vimrc ideavimrc'
+entrypoints := 'vimrc ideavimrc vsvimrc'
 
 install:
   curl -C - -fLo ./autoload/plug.vim --create-dirs {{ vim-plug-url }}
