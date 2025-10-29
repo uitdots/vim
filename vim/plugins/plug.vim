@@ -30,7 +30,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'tribela/vim-transparent'
+" Plug 'tribela/vim-transparent'
 Plug 'wellle/targets.vim'
 Plug 'zivyangll/git-blame.vim'
 
