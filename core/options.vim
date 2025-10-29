@@ -35,6 +35,7 @@ set nocursorcolumn " Disable highlighting of the cursor column
 set nocursorline " Disable highlighting of the cursor line
 set whichwrap+=<,>,[,],h,l " Allow wrapping with arrow keys
 set foldmethod=indent
+set smoothscroll
 
 " File Handling & Backup
 set nobackup " Disable backup files
