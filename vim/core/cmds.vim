@@ -3,7 +3,7 @@ function! BigFile()
   if getfsize(l:path) > g:bigfile_size
     setlocal syntax=
     setlocal nospell
-    setlocal smoothie_enabled=0
+    let g:smoothie_enabled=0
   endif
 endfunction
 
