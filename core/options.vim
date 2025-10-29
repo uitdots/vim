@@ -26,6 +26,8 @@ set showtabline=2 " Show tab bar when multiple tabs exist
 set noshowmode " Hide mode indicator (for lightline)
 set fillchars=eob:\ " No tidle '~' in eob
 set shortmess=AcqFI " Reduce message clutter
+set splitbelow=on
+set splitright=on
 
 " Cursor & Mouse Behavior
 set mouse=a " Enable mouse support
