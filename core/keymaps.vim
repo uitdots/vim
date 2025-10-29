@@ -7,7 +7,7 @@ nnoremap <C-s> :w<CR>
 nnoremap Y y$
 
 " Set No Highlight
-nnoremap <Esc> :noh<return>
+nnoremap <leader><Esc> :noh<return>
 
 " Yank All
 nnoremap <leader>y :%y+<return>
